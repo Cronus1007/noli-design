@@ -1,0 +1,124 @@
+.bg-color {
+    background-color: black;
+}
+
+@media(min-width: 991.98px) {
+    .margins {
+        margin-left: 55%;
+    }
+    .img {
+        height: 450px;
+        width: 100%;
+    }
+    .overlay {
+        margin-top: -20em;
+        margin-left: 43%;
+    }
+    .overlay-text {
+        margin-left: -25%;
+        margin-top: 15px;
+    }
+    .buttons {
+        margin-left: -10%;
+        margin-top: 25px;
+    }
+    .section-text {
+        text-align: center;
+        margin-top: 15%;
+        font-family: cursive;
+    }
+}
+
+@media (min-width: 775.98px) and (max-width:991.98px) {
+    .margins {
+        margin-left: 20%;
+    }
+    .img {
+        height: 350px;
+        width: 100%;
+    }
+    .overlay {
+        margin-top: -15.5em;
+        margin-left: 45%;
+    }
+    .overlay-text {
+        margin-left: -20%;
+        margin-top: 15px;
+    }
+    .buttons {
+        margin-left: -20%;
+        margin-top: 25px;
+    }
+}
+
+@media (min-width:575.98px)and (max-width: 775.98px) {
+    .margins {
+        margin-left: 10%;
+    }
+    .img {
+        height: 350px;
+        width: 100%;
+    }
+    .overlay {
+        margin-top: -15.5em;
+        margin-left: 37%;
+    }
+    .overlay-text {
+        margin-left: -20%;
+        margin-top: 15px;
+    }
+    .buttons {
+        margin-left: -17.5%;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .margins {
+        margin-top: 5%;
+    }
+    .img {
+        height: 250px;
+        width: 100%;
+    }
+    .overlay {
+        margin-top: -11.4em;
+        margin-left: 30%;
+    }
+    .overlay-text {
+        margin-left: -20%;
+        margin-top: 15px;
+    }
+    .buttons {
+        display: none;
+    }
+}
+
+.secondary:hover {
+    background-color: grey;
+}
+
+.primary:hover {
+    background-color: darkblue;
+}
+
+.main {
+    width: 100%;
+}
+
+.bg-primary {
+    background-color: #0442fc;
+    opacity: 1;
+}
+
+button {
+    cursor: pointer;
+}
+
+.top {
+    margin-top: 5%;
+}
+
+.ml {
+    margin-left: 7%;
+}

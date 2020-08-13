@@ -1,0 +1,99 @@
+/*
+Author: Erilisdesign
+Author URI: http://themeforest.net/user/erilisdesign
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Backgrounds
+2. Navigation
+3. Back to top
+-------------------------------------------------------------------*/
+
+(function($) {
+	"use strict";
+
+	// Vars
+	var $body = $('body'),
+		$backtotop = $('.backtotop');
+
+	function getWindowWidth() {
+		return Math.max( $(window).width(), window.innerWidth);
+	}
+
+	// [1. Backgrounds]
+	function ed_backgrounds() {
+
+		// Image
+		var $bgImage = $('.bg-image-holder');
+		if($bgImage.length) {
+			$bgImage.each(function(){
+				var src = $(this).children('img').attr('src');
+				var $self = $(this);
+
+				$self.css('background-image','url('+src+')').children('img').hide();
+			});
+		}
+
+	}
+
+	// [2. Navigation]
+	function ed_navigation() {
+		var scrollTo = $('a.scrollto');
+
+		// Smooth Scroll
+		scrollTo.off('click');
+		scrollTo.on('click', function(e) {
+
+			// Make sure this.hash has a value before overriding default behavior
+			if (this.hash !== "") {
+				// Prevent default anchor click behavior
+				e.preventDefault();
+
+				// Store hash
+				var hash = this.hash,
+					offset = document.querySelector(hash).offsetTop;
+
+				$('html, body').animate({
+					scrollTop: offset
+				}, 800);
+			}
+
+		});
+		
+		// Back to top
+		$backtotop.on('click', function(e) {
+			e.preventDefault();
+
+			$('html, body').animate({
+				scrollTop: 0
+			}, 800);
+		});
+	}
+	
+	// [3. Back to top]
+	function ed_backToTop() {
+		var scrollPosition = $(window).scrollTop();
+
+		if( getWindowWidth() >= 576 ){
+			if ( scrollPosition > 100 ) {
+				$backtotop.addClass('active');
+			} else {
+				$backtotop.removeClass('active');
+			}
+		} else {
+			$backtotop.removeClass('active');
+		}
+	}
+
+	jQuery(document).ready(function($) {
+		ed_backgrounds();
+		ed_navigation();
+	});
+
+	$(window).on( 'scroll resize', function() {
+		ed_backToTop();
+	});
+
+})(jQuery);
